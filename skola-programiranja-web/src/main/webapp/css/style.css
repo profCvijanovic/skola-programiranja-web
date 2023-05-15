@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+h1{
+	font-size: 28px;
+	font-weight: bold;
+	font-family: Comic Sans MS;
+	color: #E41788;
+	border: 3px solid #9900cc;
+	background-color: #b3e0ff;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+}
+
+.index-uvod{
+	font-size: 18px;
+	font-family: Comic Sans MS;
+	font-weight: bold;
+	color: #00ff00;
+	border: 1px solid #006600;
+	text-align: left;
+	padding-left: 10%;
+	background-image: url("../slike/back.jpg");
+}
+
+.registracija-forma{
+	border: 1px solid #ffff1a;
+}
+
+
+#glavni_div_index{
+	border: 2px solid #00b3b3;
+	background-color: #e6ffff;
+}
+
