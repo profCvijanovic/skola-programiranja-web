@@ -10,23 +10,27 @@
 		/>
 	</head>
 	<body>
-		<div id = "glavni_div_index">
+		<div>
 			<h1>REGISTRACIJA</h1>
 			
-			<a href = "../index.html"><img src = "../slike/home.png"></a>
-			
-			<div class="registracija-forma">
-				<form action="../RegistracijaController" method="post">
+			<div class="registracija-zajednicki-div">
 					
-					User name: <input type = "text" name = "username"/> <br>
-					Password: <input type = "text" name = "password"/> <br>
-					Repeat Password: <input type = "text" name = "repeatedpassword"/> <br>
-					
-					<input type="submit" value="REGISTRUJ SE">
-					
+				<a href = "../index.html"><img class="slika-registracija" src = "../slike/home.png"></a>
+	
+				<form class="registracija-forma" action="../RegistracijaController" method="post">
+						
+					<label>	User name:</label>
+					<input class = "registracija-input-user" type = "text" name = "username"/> <br>
+					<label>	Password:</label>
+					<input class = "registracija-input-pass" type = "text" name = "password"/> <br>
+					<label>	Repeat Password:</label> 
+					<input class = "registracija-input-rep" type = "text" name = "repeatedpassword"/> <br>
+							
+					<input class = "registracija-submit" type="submit" value="REGISTRUJ SE">
+							
 				</form>
+
 			</div>
-			
 			
 		</div>
 	</body>

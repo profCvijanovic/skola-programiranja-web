@@ -23,8 +23,81 @@ h1{
 	background-image: url("../slike/back.jpg");
 }
 
-.registracija-forma{
+.registracija-forma{	
+	font-size: 18px;
+	font-family: Comic Sans MS;
+	font-weight: bold;
+	color:  #e6e6ff;
+	background-image: url("../slike/form-back.jpg");
 	border: 1px solid #ffff1a;
+	width: 60%;
+	display: inline-block;
+	padding: 5%;
+	margin-left: 10%;
+	
+}
+
+.slika-registracija{
+	width: 15%;
+	background-color: #e6ffff;
+}
+
+.registracija-input-user{
+	font-size: 14px;
+	font-family: Comic Sans MS;
+	color:#00004d;
+	font-weight: bold;
+	border: 1px solid #ffff1a;
+	margin-left: 13%;
+	text-align: left;
+	width: 50%;
+	background-color: #e6e6ff;
+}
+
+.registracija-input-pass{
+	font-size: 14px;
+	font-family: Comic Sans MS;
+	color:#00004d;
+	font-weight: bold;
+	border: 1px solid #ffff1a;
+	margin-left: 15%;
+	text-align: left;
+	width: 50%;
+	background-color: #e6e6ff;
+}
+
+.registracija-input-rep{
+	font-size: 14px;
+	font-family: Comic Sans MS;
+	color:#00004d;
+	font-weight: bold;
+	border: 1px solid #ffff1a;
+	margin-left: 5.1%;
+	text-align: left;
+	width: 50%;
+	background-color: #e6e6ff;
+}
+
+
+.registracija-zajednicki-div{
+	padding: 5%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	background-color: #e6ffff;
+}
+
+.registracija-submit{
+	font-size: 14px;
+	font-family: Comic Sans MS;
+	color:#00004d;
+	font-weight: bold;
+	border: 1px solid #ffff1a;
+	margin-left: 28.5%;
+	margin-top: 10px;
+	text-align: center;
+	width: 35%;
+	background-color: #e6e6ff;
+	
 }
 
 
