@@ -29,6 +29,7 @@ public class RegistracijaController extends HttpServlet {
 		
 		if(daLiJePassIstiKaoRepeatedPass) {
 			System.out.println("Isti su pass i repeated pass");
+			service.insertUser(userName, password);
 			response.sendRedirect("stranice/uspesna_registracija.html");
 		}else {
 			System.out.println("Nisu isti pass i repeated pass");
