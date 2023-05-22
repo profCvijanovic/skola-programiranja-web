@@ -14,6 +14,23 @@ public class Validacija {
 			return false;
 		}	
 	}
+
+	public boolean proveriDaLiSuParametriOk(String userName, String password) {
+		
+		if( userName == null || password == null) {
+			return false;	
+		}else {
+			
+			if(userName.trim().equals("") || password.trim().equals("")) {
+				return false;
+			}else {
+				return true;
+			}		
+		}	
+		
+	}
+	
+	
 	
 	
 	

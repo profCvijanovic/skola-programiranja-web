@@ -5,8 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import model.User;
-import model.UserDetails;
-import model.Zaposleni;
+
 
 public class RegistracijaDao {
 	

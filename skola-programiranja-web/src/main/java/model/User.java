@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ public class User {
 	private int id;
 	private String userName;
 	private String password;
+	@Enumerated
+	private Rola rola;
 
 	public int getId() {
 		return id;
@@ -32,7 +35,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Rola getRola() {
+		return rola;
+	}
+	public void setRola(Rola rola) {
+		this.rola = rola;
+	}
 	
-	
-
 }

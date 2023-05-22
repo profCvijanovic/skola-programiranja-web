@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +21,6 @@ public class UserDetails {
 	private String prezime;
 	@Embedded
 	private Adresa adresa;
-	@Enumerated
-	private Rola rola;
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<Contact> kontakti = new ArrayList<Contact>();
 	
@@ -50,12 +47,6 @@ public class UserDetails {
 	}
 	public void setAdresa(Adresa adresa) {
 		this.adresa = adresa;
-	}
-	public Rola getRola() {
-		return rola;
-	}
-	public void setRola(Rola rola) {
-		this.rola = rola;
 	}
 	public List<Contact> getKontakti() {
 		return kontakti;
