@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Rola;
 import model.User;
@@ -43,14 +44,18 @@ public class LoginController extends HttpServlet {
 				response.sendRedirect("stranice/login.html");
 			}else {
 				//ako postoji user 
-				Rola rola = user.getRola();
+				//Kreiram sesiju
+				HttpSession session = request.getSession();
+				//Ubacujem user-a u sesiju
+				session.setAttribute("user", user);
+				Rola rola = user.getRola();		
 				//ako je rola null onda idi na login.html
 				if(rola == null) {
 					response.sendRedirect("stranice/login.html");
 				}else {
-					//ako je rola chief - idi na chief.html, 
+					//ako je rola chief - idi na chief.jsp, 
 					if(rola == Rola.CHIEF) {
-						response.sendRedirect("stranice/chief.html");
+						response.sendRedirect("view/chief.jsp");
 					}
 					//a ako je rola programer idi na programer.html
 					if(rola == Rola.PROGRAMMER) {
