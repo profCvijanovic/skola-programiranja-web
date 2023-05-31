@@ -71,7 +71,7 @@ public class ProfilDao {
 					profil.setPostanskiBroj(izBaze[7].toString());
 				}
 				
-				if(izBaze[3] != null) {
+				if(izBaze[8] != null) {
 					profil.setNazivTima(izBaze[8].toString());
 				}
 		

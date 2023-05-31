@@ -52,7 +52,11 @@
 		<tr>
 			<td>2</td>
 			<td>Timovi</td>
-			<td>timovi dugme</td>
+			<td>
+				<form action="../TimController" method="get">
+					<input type="submit" value="TIMOVI">
+				</form>
+			</td>
 		</tr>
 		<tr>
 			<td>3</td>

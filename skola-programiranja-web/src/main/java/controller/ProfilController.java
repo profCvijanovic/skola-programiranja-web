@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,15 +29,12 @@ public class ProfilController extends HttpServlet {
 		
 		ProfilDto profil = service.vratiProfilnePodatke(idUser);
 		
-		System.out.println("Username: " + profil.getUserName());
-		System.out.println("Sifra: " + profil.getSifraZaposlenog());
-		System.out.println("Ime: " + profil.getIme());
-		System.out.println("Prezime: " + profil.getPrezime());
-		System.out.println("Drzava: " + profil.getDrzava());
-		System.out.println("Grad: " + profil.getGrad());
-		System.out.println("Ulica: " + profil.getUlica());
-		System.out.println("Postanski broj: " + profil.getPostanskiBroj());
-		System.out.println("Tim: " + profil.getNazivTima());
+		request.setAttribute("profil", profil);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/profile.jsp");
+		
+		dispatcher.forward(request, response);
+
 		
 		
 		
