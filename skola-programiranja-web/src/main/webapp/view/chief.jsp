@@ -85,6 +85,10 @@
 		</tr>
 	
 	</table>
+	
+	<form action="../UserController" method="get">
+					<input type="submit" value="PRIKAZI SVE USERE">
+	</form>
 
 </body>
 </html>
