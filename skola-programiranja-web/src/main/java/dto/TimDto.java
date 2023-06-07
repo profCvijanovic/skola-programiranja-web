@@ -4,6 +4,7 @@ public class TimDto {
 	
 	private String nazivTima;
 	private String opis;
+	private int id;
 	
 	public TimDto() {
 		
@@ -26,7 +27,13 @@ public class TimDto {
 	public void setOpis(String opis) {
 		this.opis = opis;
 	}
-	
-	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 }

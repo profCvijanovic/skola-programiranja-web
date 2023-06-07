@@ -35,6 +35,21 @@
 			<tr> 
 				<td> ${tim.nazivTima} </td>
 				<td> ${tim.opis}</td>
+				<td>				
+						<form action="EditTimController" method="get">	
+							Novi Naziv tima: <input type="text" name="nazivTima">
+							Novi Opis: <input type="text" name="opis">
+								  <input type="hidden" name="idTim" value="${tim.id}">
+							      <input type="submit" value="edit">
+						</form>
+				</td>
+				
+				<td>
+					<c:url var = "delete" value="DeleteTimController">
+						<c:param name="idTim" value="${tim.id}"/>
+					</c:url>
+					<a href = "${delete}"><button>delete</button></a>
+				</td>
 			</tr>
 		
 		</c:forEach>
@@ -42,7 +57,11 @@
 	
 	</table>
 	
-	<form action="#" method="get">	
+	<br><br>
+	
+	<form action="AddTimController" method="get">	
+		Naziv tima: <input type="text" name="nazivTima">
+		Opis: <input type="text" name="opis">
 		<input type="submit" value="ADD TEAM">
 	</form>
 

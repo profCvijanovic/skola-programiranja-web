@@ -25,7 +25,8 @@ public class TimDao {
 			try {	
 				String sql = "SELECT\r\n"
 						+ "naziv,\r\n"
-						+ "opis\r\n"
+						+ "opis,\r\n"
+						+ "id\r\n"
 						+ "FROM tim";
 				Query query = sesija.createNativeQuery(sql);
 						
@@ -41,6 +42,10 @@ public class TimDao {
 					
 					if(o[1] != null) {
 						timDto.setOpis(o[1].toString());
+					}
+					
+					if(o[2] != null) {
+						timDto.setId((int)o[2]);
 					}
 					
 					sviTimovi.add(timDto);
