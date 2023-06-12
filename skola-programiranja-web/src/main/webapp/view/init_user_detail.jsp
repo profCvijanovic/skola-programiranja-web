@@ -25,19 +25,62 @@
 	<jsp:useBean id = "idUser" scope="request" class="java.lang.String"></jsp:useBean>
 	<h1>WELCOME TO INIT USERS PAGE</h1>
 	
-	<a href = "view/users.jsp">back to previous page</a>
+	<a href = "UserController">back to previous page</a>
 	
 	<p>User id: ${idUser}</p>
 	
-	<p>TIMOVI</p>
-	<c:forEach var = "tim" items="${listaTimova}">	
-		<p> ${tim.nazivTima}</p>
-	</c:forEach>
+	<form action="UserDetailsController" method="get">
+		Drzava: <input type="text" name="drzava">
+		Grad: <input type="text" name="grad">
+		Ulica: <input type="text" name="ulica">
+		Postanski broj: <input type="text" name="postanskiBroj">
+		
+		<br><br>
+		Ime: <input type="text" name="ime">
+		Prezime: <input type="text" name="prezime">
+		
+		<br><br>
+		<input type="submit" value = "KREIRAJ USER DETAILS">
 	
-	<p>POZICIJE</p>
-	<c:forEach var = "pozicija" items="${listaPozicija}">	
-		<p> ${pozicija.nazivPozicije}</p>
-	</c:forEach>
+	</form>
+	
+	<form action="UserDetailsController" method="get">
+		
+		Plata: <input type="text" name="plata">
+		Sifra zaposlenog: <input type="text" name="sifraZaposlenog">
+		
+		<br><br>
+		Rola:  <br>
+		CHIEF:<input type="radio" name="rola" value = "0">
+		PROGRAMER:<input type="radio" name="rola" value = "1">
+		
+		<br><br>
+		
+		Tim:
+		<select name="idTim">
+		
+			<c:forEach var = "tim" items="${listaTimova}">	
+				<option value="${tim.id}">${tim.nazivTima}</option>
+			</c:forEach>
+		</select>
+		
+		<br><br>
+		
+		Pozicije:
+		<c:forEach var = "pozicija" items="${listaPozicija}">	
+			${pozicija.nazivPozicije} - <input type="checkbox" name="pozicija" value = "${pozicija.id}">
+		</c:forEach>
+		
+		<input type="hidden" name="idUser" value = "${idUser}">
+		
+		<br><br>
+		<input type="submit" value = "KREIRAJ ZAPOSLENOG I DODAJ ROLU">
+	
+	</form>
+	
+
+	
+
 
 
 </body>

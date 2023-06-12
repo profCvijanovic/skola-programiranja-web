@@ -24,6 +24,18 @@ public class UserDetails {
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<Contact> kontakti = new ArrayList<Contact>();
 	
+	public UserDetails() {
+		
+	}
+	
+	public UserDetails(String ime, String prezime, Adresa adresa) {
+		this.ime = ime;
+		this.prezime = prezime;
+		this.adresa = adresa;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

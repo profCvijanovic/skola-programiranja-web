@@ -10,6 +10,16 @@ public class Adresa {
 	private String ulica;
 	private String postanskiBroj;
 	
+	public Adresa() {
+		
+	}
+	
+	public Adresa(String drzava, String grad, String ulica, String postanskiBroj) {
+		this.drzava = drzava;
+		this.grad = grad;
+		this.ulica = ulica;
+		this.postanskiBroj = postanskiBroj;
+	}
 	public String getDrzava() {
 		return drzava;
 	}

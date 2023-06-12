@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.TimDao;
 import dto.PozicijaDto;
 import dto.TimDto;
 import servis.InitUserDetailsService;
