@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dto.PozicijaDto;
 import dto.TimDto;
+import dto.UserDetailsDto;
 import servis.InitUserDetailsService;
 
 
@@ -31,9 +32,11 @@ public class InitUserDetailsController extends HttpServlet {
 		
 		List<TimDto> listaTimova = service.vratiSveTimove();
 		List<PozicijaDto> listaPozicija = service.vratiSvePozicije();
+		List<UserDetailsDto> listaUserDetails = service.vratiSveUserDetails();
 		
 		request.setAttribute("listaTimova", listaTimova);
 		request.setAttribute("listaPozicija", listaPozicija);
+		request.setAttribute("listaUserDetails", listaUserDetails);
 		request.setAttribute("idUser", idUser);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("view/init_user_detail.jsp");

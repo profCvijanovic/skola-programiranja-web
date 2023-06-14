@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import dto.PozicijaDto;
+import dto.UserDetailsDto;
+import model.UserDetails;
 
 public class InitUserDetailsDao {
 	
@@ -58,6 +60,48 @@ public class InitUserDetailsDao {
 			sesija.close();
 		
 		return svePozicije;
+	}
+
+
+	public List<UserDetailsDto> vratiSveUserDetails() {
+		
+		List<UserDetailsDto> allUserDetails = new ArrayList<UserDetailsDto>();
+		
+		Session sesija = factory.openSession();
+		sesija.beginTransaction();	
+			try {	
+				String hql = "from UserDetails";
+				Query query = sesija.createQuery(hql);
+						
+				List<UserDetails> izBaze = (List<UserDetails>)query.getResultList();
+				
+				for(UserDetails u: izBaze) {
+					
+					UserDetailsDto userDetailsDto = new UserDetailsDto();
+						
+					userDetailsDto.setId(u.getId());
+					userDetailsDto.setIme(u.getIme());
+					userDetailsDto.setPrezime(u.getPrezime());
+					userDetailsDto.setDrzava(u.getAdresa().getDrzava());
+					userDetailsDto.setGrad(u.getAdresa().getGrad());
+					userDetailsDto.setUlica(u.getAdresa().getUlica());
+					userDetailsDto.setPostanskiBroj(u.getAdresa().getPostanskiBroj());
+					
+					allUserDetails.add(userDetailsDto);
+					
+				}
+				
+				System.out.println("Postoji lista user details ");
+				sesija.getTransaction().commit();
+			}catch (Exception e) {
+				System.out.println("Ne postoji lista user details!!!");
+				allUserDetails = null;
+				sesija.getTransaction().rollback();
+			}		
+			sesija.close();
+		
+		return allUserDetails;
+		
 	}
 
 }

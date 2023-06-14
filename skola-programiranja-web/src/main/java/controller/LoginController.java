@@ -59,7 +59,7 @@ public class LoginController extends HttpServlet {
 					}
 					//a ako je rola programer idi na programer.html
 					if(rola == Rola.PROGRAMMER) {
-						response.sendRedirect("stranice/programmer.html");
+						response.sendRedirect("view/programer.jsp");
 					}
 				}		
 			}

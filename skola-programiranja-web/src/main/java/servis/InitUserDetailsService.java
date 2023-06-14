@@ -6,6 +6,7 @@ import dao.InitUserDetailsDao;
 import dao.TimDao;
 import dto.PozicijaDto;
 import dto.TimDto;
+import dto.UserDetailsDto;
 
 public class InitUserDetailsService {
 	
@@ -18,6 +19,10 @@ public class InitUserDetailsService {
 	
 	public List<PozicijaDto> vratiSvePozicije() {
 		return dao.vratiSvePozicije();
+	}
+
+	public List<UserDetailsDto> vratiSveUserDetails() {
+		return dao.vratiSveUserDetails();
 	}
 
 }

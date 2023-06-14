@@ -20,8 +20,8 @@ import servis.UserDetailsService;
 /**
  * Servlet implementation class TimController
  */
-@WebServlet("/UserDetailsController")
-public class UserDetailsController extends HttpServlet {
+@WebServlet("/ZaposleniRolaController")
+public class ZaposleniRolaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -29,18 +29,17 @@ public class UserDetailsController extends HttpServlet {
 		
 		UserDetailsService service = new UserDetailsService();
 		
+		String idUser = request.getParameter("idUser");
+		String plata = request.getParameter("plata");
+		String sifraZaposlenog = request.getParameter("sifraZaposlenog");
+		String idTim = request.getParameter("idTim");
+		String[] pozicija = request.getParameterValues("pozicija");
+		String idUserDetails = request.getParameter("idUserDetails");
 		
-		String drzava = request.getParameter("drzava");
-		String grad = request.getParameter("grad");
-		String ulica = request.getParameter("ulica");
-		String postanskiBroj = request.getParameter("postanskiBroj");
-		String ime = request.getParameter("ime");
-		String prezime = request.getParameter("prezime");
-			
-		Adresa adresa = new Adresa(drzava, grad, ulica, postanskiBroj);
-		UserDetails userDetails = new UserDetails(ime, prezime, adresa);
-		
-		service.snimiUserDetails(userDetails);
+		String rola = request.getParameter("rola");
+	
+		service.snimiRola(rola , idUser);
+		service.snimiZaposlenog(plata , sifraZaposlenog, idTim, idUser, idUserDetails, pozicija);
 		
 		response.sendRedirect("InitUserDetailsController");
 		

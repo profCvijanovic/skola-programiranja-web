@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>chief</title>
+<title>profil</title>
 		<link
 			type="text/css"
 			rel = "stylesheet"

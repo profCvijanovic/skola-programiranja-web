@@ -3,6 +3,7 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="dto.TimDto" %>
 <%@ page import="dto.PozicijaDto" %>
+<%@ page import="dto.UserDetailsDto" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.lang.String" %>
@@ -22,6 +23,7 @@
 	
 	<jsp:useBean id = "listaTimova" scope="request" class="java.util.ArrayList"></jsp:useBean>
 	<jsp:useBean id = "listaPozicija" scope="request" class="java.util.ArrayList"></jsp:useBean>
+	<jsp:useBean id = "listaUserDetails" scope="request" class="java.util.ArrayList"></jsp:useBean>
 	<jsp:useBean id = "idUser" scope="request" class="java.lang.String"></jsp:useBean>
 	<h1>WELCOME TO INIT USERS PAGE</h1>
 	
@@ -44,7 +46,9 @@
 	
 	</form>
 	
-	<form action="UserDetailsController" method="get">
+	<br><br>
+	
+	<form action="ZaposleniRolaController" method="get">
 		
 		Plata: <input type="text" name="plata">
 		Sifra zaposlenog: <input type="text" name="sifraZaposlenog">
@@ -61,6 +65,16 @@
 		
 			<c:forEach var = "tim" items="${listaTimova}">	
 				<option value="${tim.id}">${tim.nazivTima}</option>
+			</c:forEach>
+		</select>
+		
+		<br><br>
+		
+		User Details:
+		<select name="idUserDetails">
+		
+			<c:forEach var = "userDetails" items="${listaUserDetails}">	
+				<option value="${userDetails.id}">${userDetails.ime} ${userDetails.prezime}</option>
 			</c:forEach>
 		</select>
 		
